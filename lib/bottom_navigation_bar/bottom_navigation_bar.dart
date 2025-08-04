@@ -15,7 +15,7 @@ class BottomNavigationBarPage extends StatefulWidget {
 class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
   int _currentIndex = 0;
   final List<Widget> _pages = <Widget>[
-    HomePages(),
+    HomePage(),
     FavoritePages(),
     CartPage(),
     OrderPages(),
