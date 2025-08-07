@@ -2,10 +2,7 @@ import 'package:choice/model/product_model.dart';
 import 'package:flutter/material.dart';
 
 class ProductPrvider with ChangeNotifier{
-  List<Product> get items =>[..._items];
-Product findById(String id){
-return _items.firstWhere((prod)=>prod.id ==id);
-}
+
   List<Product> _items = [
     Product(
       id: "a1",
@@ -344,4 +341,9 @@ return _items.firstWhere((prod)=>prod.id ==id);
           "https://naviforce.com.bd/wp-content/uploads/2024/07/Ha5d7165fe0714e7aa5049fc093b1f1b8F.jpg_1200x1200-jpg-1.webp",
     ),
   ];
+
+  List<Product> get items =>[..._items];
+  Product findById(String id){
+    return _items.firstWhere((prod)=>prod.id ==id);
+  }
 }

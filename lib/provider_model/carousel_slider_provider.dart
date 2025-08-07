@@ -1,6 +1,8 @@
+
 import 'package:flutter/cupertino.dart';
 
-class CarouselProvider{
+class CarouselProvider with ChangeNotifier{
+  List<String> get slider =>[...carousel];
   List<String> carousel =[
     "https://www.shutterstock.com/image-photo/fashion-trendy-womens-jeans-isolated-600nw-2466839305.jpg",
     "https://naviforce.com.bd/wp-content/uploads/2024/07/Ha5d7165fe0714e7aa5049fc093b1f1b8F.jpg_1200x1200-jpg-1.webp",
