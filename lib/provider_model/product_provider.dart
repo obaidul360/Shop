@@ -1,8 +1,7 @@
 import 'package:choice/model/product_model.dart';
 import 'package:flutter/material.dart';
 
-class ProductPrvider with ChangeNotifier{
-
+class ProductPrvider with ChangeNotifier {
   List<Product> _items = [
     Product(
       id: "a1",
@@ -342,8 +341,20 @@ class ProductPrvider with ChangeNotifier{
     ),
   ];
 
-  List<Product> get items =>[..._items];
-  Product findById(String id){
-    return _items.firstWhere((prod)=>prod.id ==id);
+  List<Product> get items => [..._items];
+  Product findById(String id) {
+    return _items.firstWhere((prod) => prod.id == id);
+  }
+
+  List<String> getProductNameList() {
+    List<String> productNameList = [];
+    for (Product product in _items) {
+      if (!productNameList.any(
+        (e) => e.toLowerCase() == product.title.toLowerCase(),
+      )) {
+        productNameList.add(product.title);
+      }
+    }
+    return productNameList;
   }
 }

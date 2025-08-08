@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class FavoriteProvider with ChangeNotifier {
-  final List<Product> _favorites = [];
-  List<Product> get favorite => _favorites;
+  List<Product> _favorites = [];
+//  List<Product> get favorite => _favorites;
 
   void toggleFavorite(Product product) {
     if (_favorites.contains(product)) {

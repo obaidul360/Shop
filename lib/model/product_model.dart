@@ -12,4 +12,5 @@ class Product {
     required this.price,
     required this.imageUrl,
   });
+
 }
