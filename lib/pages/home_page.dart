@@ -1,10 +1,10 @@
 import 'package:choice/pages/sorted_product_list.dart';
 import 'package:choice/provider_model/carousel_slider_provider.dart'
     hide CarouselSlider;
+import 'package:choice/provider_model/cart_provider.dart';
 import 'package:choice/provider_model/favorite_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:choice/provider_model/product_provider.dart';
 
@@ -42,6 +42,7 @@ class _HomePageState extends State<HomePage> {
       builder: (context, favoriteProvider, child) {
         return Consumer<ProductPrvider>(
           builder: (context, productProvider, child) {
+            final cartProvider = Provider.of<CartProvider>(context);
             return Scaffold(
               appBar: AppBar(
                 title: const Text("Choice"),
@@ -123,192 +124,15 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ],
                   ),
-                  /*SingleChildScrollView(
-                       scrollDirection: Axis.horizontal,
-                       child: Row(
-                         children: [
-                           Padding(
-                               padding: const EdgeInsets.all(8.0),
-                               child: ElevatedButton(
-                                 onPressed: () {
-
-                                 },
-                                 child: Text("Pant"),
-                                 style: ElevatedButton.styleFrom(
-                                   side: BorderSide(color: Colors.green, width: 2), // border color
-                                   shape: RoundedRectangleBorder(
-                                     borderRadius: BorderRadius.circular(8),
-                                   ),
-                                 ),
-                               )
-
-                           ),
-                           Padding(
-                               padding: const EdgeInsets.all(8.0),
-                               child: ElevatedButton(
-                                 onPressed: () {},
-                                 child: Text("T-Shart"),
-                                 style: ElevatedButton.styleFrom(
-                                   side: BorderSide(color: Colors.green, width: 2), // border color
-                                   shape: RoundedRectangleBorder(
-                                     borderRadius: BorderRadius.circular(8),
-                                   ),
-                                 ),
-                               )
-
-                           ),
-                           Padding(
-                               padding: const EdgeInsets.all(8.0),
-                               child: ElevatedButton(
-                                 onPressed: () {},
-                                 child: Text("Jeans"),
-                                 style: ElevatedButton.styleFrom(
-                                   side: BorderSide(color: Colors.green, width: 2), // border color
-                                   shape: RoundedRectangleBorder(
-                                     borderRadius: BorderRadius.circular(8),
-                                   ),
-                                 ),
-                               )
-
-                           ),
-                           Padding(
-                               padding: const EdgeInsets.all(8.0),
-                               child: ElevatedButton(
-                                 onPressed: () {},
-                                 child: Text("Shart"),
-                                 style: ElevatedButton.styleFrom(
-                                   side: BorderSide(color: Colors.green, width: 2), // border color
-                                   shape: RoundedRectangleBorder(
-                                     borderRadius: BorderRadius.circular(8),
-                                   ),
-                                 ),
-                               )
-
-                           ),
-                           Padding(
-                               padding: const EdgeInsets.all(8.0),
-                               child: ElevatedButton(
-                                 onPressed: () {},
-                                 child: Text("Panjabi"),
-                                 style: ElevatedButton.styleFrom(
-                                   side: BorderSide(color: Colors.green, width: 2), // border color
-                                   shape: RoundedRectangleBorder(
-                                     borderRadius: BorderRadius.circular(8),
-                                   ),
-                                 ),
-                               )
-
-                           ),
-                           Padding(
-                               padding: const EdgeInsets.all(8.0),
-                               child: ElevatedButton(
-                                 onPressed: () {},
-                                 child: Text("Share"),
-                                 style: ElevatedButton.styleFrom(
-                                   side: BorderSide(color: Colors.green, width: 2), // border color
-                                   shape: RoundedRectangleBorder(
-                                     borderRadius: BorderRadius.circular(8),
-                                   ),
-                                 ),
-                               )
-
-                           ),
-                           Padding(
-                               padding: const EdgeInsets.all(8.0),
-                               child: ElevatedButton(
-                                 onPressed: () {},
-                                 child: Text("Tops"),
-                                 style: ElevatedButton.styleFrom(
-                                   side: BorderSide(color: Colors.green, width: 2), // border color
-                                   shape: RoundedRectangleBorder(
-                                     borderRadius: BorderRadius.circular(8),
-                                   ),
-                                 ),
-                               )
-
-                           ),
-                           Padding(
-                               padding: const EdgeInsets.all(8.0),
-                               child: ElevatedButton(
-                                 onPressed: () {},
-                                 child: Text("Watch"),
-                                 style: ElevatedButton.styleFrom(
-                                   side: BorderSide(color: Colors.green, width: 2), // border color
-                                   shape: RoundedRectangleBorder(
-                                     borderRadius: BorderRadius.circular(8),
-                                   ),
-                                 ),
-                               )
-
-                           ),
-                           Padding(
-                               padding: const EdgeInsets.all(8.0),
-                               child: ElevatedButton(
-                                 onPressed: () {},
-                                 child: Text("Bag"),
-                                 style: ElevatedButton.styleFrom(
-                                   side: BorderSide(color: Colors.green, width: 2), // border color
-                                   shape: RoundedRectangleBorder(
-                                     borderRadius: BorderRadius.circular(8),
-                                   ),
-                                 ),
-                               )
-
-                           ),
-                           Padding(
-                               padding: const EdgeInsets.all(8.0),
-                               child: ElevatedButton(
-                                 onPressed: () {},
-                                 child: Text("Shoes"),
-                                 style: ElevatedButton.styleFrom(
-                                   side: BorderSide(color: Colors.green, width: 2), // border color
-                                   shape: RoundedRectangleBorder(
-                                     borderRadius: BorderRadius.circular(8),
-                                   ),
-                                 ),
-                               )
-
-                           ),
-                           Padding(
-                               padding: const EdgeInsets.all(8.0),
-                               child: ElevatedButton(
-                                 onPressed: () {},
-                                 child: Text("Walet"),
-                                 style: ElevatedButton.styleFrom(
-                                   side: BorderSide(color: Colors.green, width: 2), // border color
-                                   shape: RoundedRectangleBorder(
-                                     borderRadius: BorderRadius.circular(8),
-                                   ),
-                                 ),
-                               )
-
-                           ),
-                           Padding(
-                               padding: const EdgeInsets.all(8.0),
-                               child: ElevatedButton(
-                                 onPressed: () {},
-                                 child: Text("Makueb"),
-                                 style: ElevatedButton.styleFrom(
-                                   side: BorderSide(color: Colors.green, width: 2), // border color
-                                   shape: RoundedRectangleBorder(
-                                     borderRadius: BorderRadius.circular(8),
-                                   ),
-                                 ),
-                               )
-
-                           ),
-                         ],
-                       ),
-                     ),*/
                   SizedBox(
                     height: 50,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: sortedNameList.length,
-                      itemBuilder: (context, index) {
-                        return Padding(
-                          padding: const EdgeInsets.all(5.0),
-                          child: ElevatedButton(
+                    child: Padding(
+                      padding: const EdgeInsets.all(5.0),
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: sortedNameList.length,
+                        itemBuilder: (context, index) {
+                          return ElevatedButton(
                             onPressed: () {
                               Navigator.push(
                                 context,
@@ -328,78 +152,73 @@ class _HomePageState extends State<HomePage> {
                                 borderRadius: BorderRadius.circular(8),
                               ),
                               padding: EdgeInsets.symmetric(
-                                horizontal: 8,
-                                vertical: 12,
-
+                                horizontal: 5,
+                                vertical: 8,
                               ),
                             ),
-                            child: Text(sortedNameList[index],),
-                          ),
-                        );
-                      },
+                            child: Text(sortedNameList[index]),
+                          );
+                        },
+                      ),
                     ),
                   ),
                   const Divider(),
 
                   // ===== Product Grid =====
                   Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: GridView.builder(
-                        itemCount: productProvider.items.length,
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 3,
-                              crossAxisSpacing: 10,
-                              mainAxisSpacing: 10,
-                              childAspectRatio: 3 / 4,
-                            ),
-                        itemBuilder: (context, index) {
-                          final product = productProvider.items[index];
-                          final isFavorite = favoriteProvider.isFavorite(
-                            product,
-                          );
-                          return InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) =>
-                                      DetailsePaggeScreen(product: product),
-                                ),
-                              );
-                            },
-                            child: GridTile(
-                              footer: GridTileBar(
-                                backgroundColor: Colors.black54,
-                                title: Text(
-                                  product.title,
-                                  textAlign: TextAlign.center,
-                                ),
-                                leading: IconButton(
-                                  onPressed: () {
-                                    favoriteProvider.toggleFavorite(product);
-                                  },
-                                  icon: Icon(
-                                    isFavorite
-                                        ? Icons.favorite
-                                        : Icons.favorite_border,
+                    child: GridView.builder(
+                      itemCount: productProvider.items.length,
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 3,
+                            crossAxisSpacing: 10,
+                            mainAxisSpacing: 10,
+                            childAspectRatio: 3 / 4,
+                          ),
+                      itemBuilder: (context, index) {
+                        final product = productProvider.items[index];
+                        final isFavorite = favoriteProvider.isFavorite(product);
+                        return InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    DetailsePaggeScreen(product: product),
+                              ),
+                            );
+                          },
+                          child: GridTile(
+                            footer: GridTileBar(
+                              backgroundColor: Colors.black54,
+                              title: Text(
+                                product.title,
+                                textAlign: TextAlign.center,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                              leading: IconButton(
+                                onPressed: () {
+                                  favoriteProvider.toggleFavorite(product);
+                                },
+                                icon: Icon(
+                                  isFavorite
+                                      ? Icons.favorite
+                                      : Icons.favorite_border,
 
-                                    color: Colors.red,
-                                  ),
-                                ),
-                              ),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(10),
-                                child: Image.network(
-                                  product.imageUrl,
-                                  fit: BoxFit.cover,
+                                  color: Colors.red,
                                 ),
                               ),
                             ),
-                          );
-                        },
-                      ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(5),
+                              child: Image.network(
+                                product.imageUrl,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                        );
+                      },
                     ),
                   ),
                 ],

@@ -1,5 +1,5 @@
 import 'package:choice/bottom_navigation_bar/bottom_navigation_bar.dart';
-import 'package:choice/provider_model/carousel_slider_provider.dart';
+import 'package:choice/provider_model/cart_provider.dart';
 import 'package:choice/provider_model/favorite_provider.dart';
 import 'package:choice/provider_model/product_provider.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +13,7 @@ void main() {
       providers: [
         ChangeNotifierProvider(create: (_) => ProductPrvider()),
         ChangeNotifierProvider(create: (_) => FavoriteProvider()),
+        ChangeNotifierProvider(create: (_)=>CartProvider()),
       ],
       child: MyApp(),
     ),

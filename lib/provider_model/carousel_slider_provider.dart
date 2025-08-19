@@ -1,6 +1,4 @@
 
-import 'package:flutter/cupertino.dart';
-
 class CarouselSliderData{
   List<String> sliderList =[
     "https://www.shutterstock.com/image-photo/fashion-trendy-womens-jeans-isolated-600nw-2466839305.jpg",
